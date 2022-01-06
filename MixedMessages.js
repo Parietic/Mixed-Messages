@@ -15,6 +15,14 @@ const factBodies = [
 	'THING are actually just the THING of PLACE',
 	'THING are just ADJECTIVE THING',
 	'NAMEs favorite past time is visiting PLACE to ADVERB VERB',
+	'GROUP were counted as GROUP until DATE',
+	'THING were used as a currency by GROUP until DATE',
+	'NAME brought THING to PLACE',
+	'NAME was actually alive in DATE',
+	'NAME had been dead since DATE, they are actually NAME in disguise',
+	'PLACE uses THING so GROUP can ADVERB VERB',
+	'NAME is just ADJECTIVE THING in a suit',
+	'the THING of NAME were stolen from PLACE',
 ];
 
 // Parts of speech: Nouns, Adjectives, Verbs and Adverbs
@@ -73,7 +81,7 @@ const nouns = {
 		'Royal Family',
 		'House of Commons',
 		'Doctors with out Borders',
-		'A Union',
+		'a Union',
 	],
 	names: [
 		'Marilyn Monroe',
@@ -272,7 +280,7 @@ function genFact() {
 			case 'THING':
 				return nouns.things[randIndex(nouns.things.length)];
 			case 'GROUP':
-				return nouns.groups[randIndex(nouns.groups.length)];
+				return 'the ' + nouns.groups[randIndex(nouns.groups.length)];
 			case 'NAME':
 			case "NAME's":
 			case 'NAMEs':

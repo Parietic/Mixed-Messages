@@ -31,3 +31,28 @@ const randYear = () => {
 	return currentYear - randOffset;
 };
 
+// Generate the randomized fake fact
+function genFact() {
+	let factStr = factBodies[randIndex(factBodies.length)];
+	const factWords = factStr.split(' ');
+
+	// if word is a substitution keyword (SUBJECT, VERB etc.), then return random word of the sub type.
+	const subWords = (word) => {
+		switch (word) {
+			// case 'ADJECTIVE':
+			// case 'SUBJECT':
+			// case 'ADVERB':
+			// case 'VERB':
+			// case 'OBJECT':
+			case 'DATE':
+				return randYear().toString();
+			default:
+				return word;
+		}
+	};
+	factStr = factWords.map(subWords).join(' ');
+	console.log(factStr);
+	// const prefixIndex = randIndex(prefixes.length);
+	// const suffixIndex = randIndex(suffixes.length);
+}
+genFact();

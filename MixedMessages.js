@@ -311,4 +311,4 @@ function genFact() {
 		console.log(prefixes[prefixIndex] + factStr + suffixes[suffixIndex]);
 	}
 }
-for (let i = 0; i < 10; i++) genFact();
+genFact();

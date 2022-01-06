@@ -12,13 +12,40 @@ const suffixes = ['.', '!', '...'];
 
 const factBodies = [
 	'SUBJECT are just ADJECTIVE OBJECTS',
-	'SUBJECT were part of OBJECTS until DATE',
-	'SUBJECT have been used as a form of currency by OBJECTS',
-	'ADVERB VERB was made illegal in OBJECT after DATE',
+	// 'SUBJECT were part of OBJECTS until DATE',
+	// 'SUBJECT have been used as a form of currency by OBJECTS',
+	// 'ADVERB VERB was made illegal in OBJECT after DATE',
 ];
 
 // Following SVO, and SVIO word order
-const subjects = [];
+const subjects = [
+	'dogs',
+	'cows',
+	'chickens',
+	'pigs',
+	'horses',
+	'cats',
+	'birds',
+	'slugs',
+	'snails',
+	'elephants',
+	'polar bears',
+	'brown bears',
+	'black bears',
+	'rabbits',
+	'koalas',
+	'rodents',
+	'lions',
+	'tigers',
+	'hippopotamuses',
+	'rhinos',
+	'incests',
+	'reptiles',
+	'trees',
+	'plants',
+	'fungus',
+	'mold',
+];
 const indirectObjects = [];
 const verbs = [];
 const objects = [];
@@ -40,7 +67,8 @@ function genFact() {
 	const subWords = (word) => {
 		switch (word) {
 			// case 'ADJECTIVE':
-			// case 'SUBJECT':
+			case 'SUBJECT':
+				return subjects[randIndex(subjects.length)];
 			// case 'ADVERB':
 			// case 'VERB':
 			// case 'OBJECT':

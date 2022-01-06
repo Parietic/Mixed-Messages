@@ -11,7 +11,10 @@ const prefixes = [
 const suffixes = ['.', '!', '...'];
 
 // substitution category keyword: THING, GROUP, NAME, PLACE, ADJECTIVE, NAMES, PLACES
-const factBodies = ['THING are actually just the ADJECTIVE THING of PLACE'];
+const factBodies = [
+	'THING are actually just the THING of PLACE',
+	'THING are just ADJECTIVE THING',
+];
 
 // Parts of speech: Nouns, Adjectives, Verbs and Adverbs
 const nouns = {
@@ -135,12 +138,61 @@ const nouns = {
 		'the Indian',
 	],
 };
-const adjectives = [];
+const adjectives = [
+	'able',
+	'bad',
+	'best',
+	'better',
+	'big',
+	'certain',
+	'clear',
+	'different',
+	'early',
+	'easy',
+	'economic',
+	'federal',
+	'free',
+	'full',
+	'good',
+	'great',
+	'hard',
+	'high',
+	'human',
+	'important',
+	'international',
+	'large',
+	'late',
+	'little',
+	'local',
+	'long',
+	'low',
+	'major',
+	'military',
+	'national',
+	'new',
+	'old',
+	'only',
+	'other',
+	'political',
+	'possible',
+	'public',
+	'real',
+	'recent',
+	'right',
+	'small',
+	'social',
+	'special',
+	'strong',
+	'sure',
+	'true',
+	'whole',
+	'young',
+];
 const verbs = [];
 const adverbs = [];
 
 // Helper functions
-const randIndex = (length) => Math.floor(Math.random() * (length - 1));
+const randIndex = (length) => Math.floor(Math.random() * length);
 
 // Removes randOffset from current year
 const randYear = () => {
@@ -166,6 +218,8 @@ function genFact() {
 				return nouns.names[randIndex(nouns.names.length)];
 			case 'PLACE':
 				return nouns.places[randIndex(nouns.places.length)];
+			case 'ADJECTIVE':
+				return adjectives[randIndex(adjectives.length)];
 			case 'DATE':
 				return randYear().toString();
 			default:

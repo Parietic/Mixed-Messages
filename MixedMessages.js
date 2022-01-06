@@ -1,8 +1,8 @@
 // Store string arrays as global const's, keeps it neat, and it's no harm since this is just a small script
 // Message should be of the format: PREFIX FAKE_FACT SUFFIX
 const prefixes = [
-	// ['Did you know ', '?'], // Array prefix will use predefined suffix
-	// ['You should know ', '...'],
+	['Did you know ', '?'], // Array prefix will use predefined suffix
+	['You should know ', '...'],
 	"It's common knowledge ",
 	"It's crazy to think ",
 	"The Government doesn't want you to know ",
@@ -14,6 +14,7 @@ const suffixes = ['.', '!', '...'];
 const factBodies = [
 	'THING are actually just the THING of PLACE',
 	'THING are just ADJECTIVE THING',
+	'NAMEs favorite past time is visiting PLACE to ADVERB VERB',
 ];
 
 // Parts of speech: Nouns, Adjectives, Verbs and Adverbs
@@ -188,8 +189,65 @@ const adjectives = [
 	'whole',
 	'young',
 ];
-const verbs = [];
-const adverbs = [];
+const verbs = [
+	'walk',
+	'look up',
+	'look down',
+	'see',
+	'run',
+	'eat',
+	'drink',
+	'lie down',
+	'lie',
+	'speak',
+	'hear',
+	'swear',
+	'read',
+	'understand',
+	'jump',
+	'work',
+	'feel',
+	'mate',
+	'love',
+	'die',
+	'drive',
+	'swim',
+	'fly',
+	'sit down',
+	'stand up',
+	'smoke',
+	'do drugs',
+];
+const adverbs = [
+	'accidentally',
+	'anxiously',
+	'arrogantly',
+	'awkwardly',
+	'beautifully',
+	'bitterly',
+	'bravely',
+	'briefly',
+	'carefully',
+	'easily',
+	'generally',
+	'happily',
+	'honestly',
+	'jealously',
+	'keenly',
+	'miserably',
+	'mysteriously',
+	'naturally',
+	'often',
+	'politely',
+	'quickly',
+	'rapidly',
+	'randomly',
+	'slowly',
+	'suddenly',
+	'thankfully',
+	'unexpectedly',
+	'wrongly',
+];
 
 // Helper functions
 const randIndex = (length) => Math.floor(Math.random() * length);
@@ -200,6 +258,7 @@ const randYear = () => {
 	const randOffset = Math.floor(Math.random() * 1000);
 	return currentYear - randOffset;
 };
+// console.log(randYear());
 
 // Generate the randomized fake fact
 function genFact() {
@@ -215,11 +274,17 @@ function genFact() {
 			case 'GROUP':
 				return nouns.groups[randIndex(nouns.groups.length)];
 			case 'NAME':
+			case "NAME's":
+			case 'NAMEs':
 				return nouns.names[randIndex(nouns.names.length)];
 			case 'PLACE':
 				return nouns.places[randIndex(nouns.places.length)];
 			case 'ADJECTIVE':
 				return adjectives[randIndex(adjectives.length)];
+			case 'VERB':
+				return verbs[randIndex(verbs.length)];
+			case 'ADVERB':
+				return adverbs[randIndex(adverbs.length)];
 			case 'DATE':
 				return randYear().toString();
 			default:
@@ -227,9 +292,15 @@ function genFact() {
 		}
 	};
 	factStr = factWords.map(subWords).join(' ');
-	console.log(factStr);
 
-	// const prefixIndex = randIndex(prefixes.length);
-	// const suffixIndex = randIndex(suffixes.length);
+	const prefixIndex = randIndex(prefixes.length);
+	if (typeof prefixes[prefixIndex] === 'object') {
+		console.log(
+			prefixes[prefixIndex][0] + factStr + prefixes[prefixIndex][1]
+		);
+	} else {
+		const suffixIndex = randIndex(suffixes.length);
+		console.log(prefixes[prefixIndex] + factStr + suffixes[suffixIndex]);
+	}
 }
 for (let i = 0; i < 10; i++) genFact();

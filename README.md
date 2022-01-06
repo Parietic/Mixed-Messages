@@ -1,8 +1,7 @@
 # Mixed Messages - Fake Fact Generator
 Mixed Messages is a simple Node.js application,<br/>
-It will print a randomized fake fact to the terminal each time it is ran.
+That will print a randomized fake fact to the terminal each time it is ran.
 
-This project was created to practice javaScript syntax, GFMD and Git/GitHub workflows.<br/>
 Have fun and feel free to leave an issue if you see a typo or encounter an error.
 
 Fake fact examples:
@@ -22,3 +21,5 @@ Fake fact examples:
 1. Download the `MixedMessages.js` script from the repository
 2. Open a your terminal of choice, in the same directory as `MixedMessages.js`
 3. Then run the following command `node MixedMessages.js`
+
+###### This project was created to practice javaScript syntax, GFMD and Git/GitHub workflows.

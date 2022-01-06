@@ -22,3 +22,12 @@ const subjects = [];
 const indirectObjects = [];
 const verbs = [];
 const objects = [];
+
+// Helper functions
+const randIndex = (length) => Math.floor(Math.random() * (length - 1));
+const randYear = () => {
+	const currentYear = 2022;
+	const randOffset = Math.floor(Math.random() * 1000);
+	return currentYear - randOffset;
+};
+

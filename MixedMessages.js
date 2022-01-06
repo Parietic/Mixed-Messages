@@ -282,9 +282,11 @@ function genFact() {
 			case 'GROUP':
 				return 'the ' + nouns.groups[randIndex(nouns.groups.length)];
 			case 'NAME':
-			case "NAME's":
-			case 'NAMEs':
 				return nouns.names[randIndex(nouns.names.length)];
+			case "NAME's":
+				return "'s" + nouns.names[randIndex(nouns.names.length)];
+			case 'NAMEs':
+				return 's' + nouns.names[randIndex(nouns.names.length)];
 			case 'PLACE':
 				return nouns.places[randIndex(nouns.places.length)];
 			case 'ADJECTIVE':

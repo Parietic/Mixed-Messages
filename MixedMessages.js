@@ -75,9 +75,9 @@ const nouns = {
 		'Government',
 		'Democrats',
 		'Conservatives',
-		'Labour',
+		'Labour party',
 		'Liberal Democrats',
-		'Republican',
+		'Republicans',
 		'Royal Family',
 		'House of Commons',
 		'Doctors with out Borders',
@@ -284,9 +284,9 @@ function genFact() {
 			case 'NAME':
 				return nouns.names[randIndex(nouns.names.length)];
 			case "NAME's":
-				return "'s" + nouns.names[randIndex(nouns.names.length)];
+				return nouns.names[randIndex(nouns.names.length)] + "'s";
 			case 'NAMEs':
-				return 's' + nouns.names[randIndex(nouns.names.length)];
+				return nouns.names[randIndex(nouns.names.length)] + 's';
 			case 'PLACE':
 				return nouns.places[randIndex(nouns.places.length)];
 			case 'ADJECTIVE':

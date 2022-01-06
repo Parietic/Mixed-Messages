@@ -9,8 +9,6 @@ Fake fact examples:
 >
 > The Government doesn't want you to know John F. Kennedy was actually alive in 1253!
 >
-> Did you know rhinoceros were used as a currency by the Democrats until 1257?
->
 >Did you know fish are actually just the horses of the Mississippi river?
 >
 >You should know people were used as a currency by the Democrats until 1626...
